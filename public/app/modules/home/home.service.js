@@ -6,7 +6,6 @@
         .service('HomeService', HomeService);
 
     HomeService.$inject = ['$location', '$timeout'];
-
     /* @ngInject */
     function HomeService($location, $timeout) {
         var service = {
@@ -20,7 +19,6 @@
             if(/^(http|https)/.test(path)){
               window.location = path
             }
-            // if(/^#!/.test(path)) console.log('Internal')
           }
         }
 

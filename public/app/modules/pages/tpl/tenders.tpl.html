@@ -1,0 +1,27 @@
+<section class="department-lead">
+    <div class="container">
+      <h1 class="text-center">Tenders</h1>
+    </div>
+  </section>
+
+  <section class="color-strip-mustard">
+    <div class="container">
+    </div>
+  </section>
+
+  <section class="content-block-department pages">
+    <div class="container">
+      <div ng-repeat="tender in vm.tenders | orderBy: 'end_date'">
+        <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
+        <a ng-href="/docs/tenders/{{tender.link}}" target="_blank">{{tender.title}}</a>
+        <span class="pull-right" ng-if="tender.end_date">Deadline - <strong>
+          {{tender.end_date | date: 'fullDate'}}</strong>
+        </span>
+        <div ng-repeat="doc in tender.supporting_docs">
+          <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
+          <a ng-href="/docs/tenders/{{doc.link}}" target="_blank">{{doc.title}}</a>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </section>
