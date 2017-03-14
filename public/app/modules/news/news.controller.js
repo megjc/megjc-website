@@ -13,13 +13,6 @@
         activate()
 
         function activate() {
-          if($routeParams.slug){
-            newsService.getArticle().then(function (article) {
-              console.log(article)
-            }).catch(function ( error ) {
-              vm.article = {}
-            })
-          }
           vm.articles = newsService.getArticles()
         }
     }

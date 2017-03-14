@@ -14,7 +14,7 @@
       <div ng-repeat="tender in vm.tenders | orderBy: 'end_date'">
         <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
         <a ng-href="/docs/tenders/{{tender.link}}" target="_blank">{{tender.title}}</a>
-        <span class="pull-right" ng-if="tender.end_date">Deadline - <strong>
+        <span class="pull-right">Deadline - <strong>
           {{tender.end_date | date: 'fullDate'}}</strong>
         </span>
         <div ng-repeat="doc in tender.supporting_docs">

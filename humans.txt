@@ -1,32 +1,12 @@
 /* TEAM */
-Developer: Tremaine Buchanan
+Name: Tremaine Buchanan
+Position: Developer
+Organization: Ministry of Economic Growth and Job Creation
 Contact:tremaine.buchanan@megjc.gov.jm
-Twitter:@tremainekb
 From: Kingston, Jamaica
-
-Name: Heather Campbell
-Department: Public Relations
-Contact: heather.campbell@megjc.gov.jm
-
-Public Relations: Maxine Hinds Dixon
-Contact: heather.campbell@megjc.gov.jm
-
-Name: Patrick Thompson
-Position: Director
-Branch: Information Communication and Technology
-Contact: patrick.thompson@megjc.gov.jm
 
 Name: Zane Francis
 Position: Database Administrator
-Branch: Information Communication and Technology
+Organization: Ministry of Economic Growth and Job Creation
 Contact: zane.francis@megjc.gov.jm
-
-Name: Tricia McLean
-Position: GIS Project Manager
-Branch: Information Communication and Technology
-Contact: 	tricia.mclean@megjc.gov.jm
-
-Name: Mark Beach
-Position: GIS Project Manager
-Branch: Information Communication and Technology
-Contact: 	tricia.mclean@megjc.gov.jm
+From: Kingston, Jamaica

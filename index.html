@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Ministry of Economic Growth and Job Creation" />
+    <meta property="og:site_name" content="Ministry of Economic Growth and Job Creation" />
+    <meta property="og:description" content="The Ministry of Economic Growth and Job Creation
+    (MEGJC) was created in March 2016, with the change of the political administration.
+    The Ministry is charged with drafting the blueprint to drive economic growth
+    and sustainable development in Jamaica." />
+    <meta property="og:url" content="http://www.megjc.gov.jm" />
+    <meta property="og:image" content="http://www.megjc.gov.jm/public/img/logo.jpg" />
     <link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/components/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -61,7 +69,6 @@
   </section>
 <nav class="navbar navbar-default" ng-controller="NavCtrl as vm">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -72,7 +79,17 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#!/">Home</a></li>
+        <li class="dropdown">
+         <a href="#!/"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false">Home <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+           <li><a href="http://cloud.infoexchangeja.com/mail" target="_blank">Webmail</a></li>
+         </ul>
+       </li>
         <li class="dropdown">
          <a href
             class="dropdown-toggle"
@@ -106,8 +123,8 @@
         <!-- <li><a href id="search-link"><i class="fa fa-search"></i> Search</a></li> -->
         <li><a href><span class="gov-name">Government of Jamaica</span> <img src="public/img/jamflag.png"></a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 <div class="ng-view" autoscroll="true"></div>
@@ -115,9 +132,9 @@
 <script src="public/components/angular-route/angular-route.min.js"></script>
 <script src="public/components/angular-resource/angular-resource.min.js"></script>
 <script src="public/js/ng-map.min.js"></script>
-<!-- inject:js -->
- <script src="/public/dist/src.min.js"></script>
- <!-- endinject -->
+ <script>
+  document.write("<script src='/public/dist/src.min.js?v=" + Date.now() + "'><\/script>");
+</script>
 </body>
 
   <footer class="footer">
@@ -127,7 +144,7 @@
          <h3>Contact Us</h3>
          <p>Ministry of Economic Growth and Job Creation</p>
          <p><i class="fa fa-map-marker" aria-hidden="true"></i> 25 Dominica Drive, Kingston 5</p>
-         <p><i class="fa fa-phone-square" aria-hidden="true"></i> Telephone: (876) 926 1599</p>
+         <p><i class="fa fa-phone-square" aria-hidden="true"></i> Telephone: (876) 926 1590 (876) 926-1690-3</p>
          <p><i class="fa fa-phone-square" aria-hidden="true"></i> Public Relations: (876) 926 1590 ext. 2312</p>
          <p><i class="fa fa-phone-square" aria-hidden="true"></i> Human Resources: (876) 926 1590 ext. 2902 / 2904</p>
          <p><i class="fa fa-fax" aria-hidden="true"></i> Fax: (876) 926-4449</p>
@@ -141,7 +158,6 @@
            <li><a href="#!/resources">Information Resources</a></li>
            <li><a href="#!/services">Services</a></li>
            <li><a href="#!/careers">Careers</a></li>
-           <li><a href="#!/">Archives</a></li>
          </ul>
        </div>
        <div class="col-md-4">
@@ -161,14 +177,7 @@
            </a></li>
          </ul>
        </div>
-
      </div>
-     <!-- <div class="row text-center">
-       <p style="font-size:12px;color:#99979C;">
-         Made with <i class="fa fa-heart" aria-hidden="true" style="color:red"></i> by the Software Team <a href="https://github.com/megjc"> (@megjc) </a> of the Information and Communication Branch
-       </p>
-     </div> -->
    </div>
  </footer>
-
 </html>
