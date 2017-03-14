@@ -5,13 +5,14 @@
         .module('home')
         .controller('Home', Home);
 
-    Home.$inject = ['$scope', '$location', '$routeParams','HomeService', 'newsService', 'NgMap', 'pagesService'];
+    Home.$inject = ['$scope', '$location', '$routeParams', '$anchorScroll', 'HomeService', 'newsService', 'NgMap', 'pagesService'];
 
     /* @ngInject */
-    function Home($scope, $location, $routeParams, HomeService, newsService, NgMap, pagesService) {
+    function Home($scope, $location, $routeParams, $anchorScroll, HomeService, newsService, NgMap, pagesService) {
         var vm = this;
         vm.goTo = goTo
         vm.cancel = cancel
+        vm.scroll = scroll
         activate()
 
         function activate() {
@@ -26,6 +27,7 @@
         function goTo( path ){
           if(vm.path.indexOf('http://www.questionpoint.org/crs/servlet/org.oclc.admin.BuildForm') > -1){
             window.location = 'http://www.questionpoint.org/crs/servlet/org.oclc.admin.BuildForm?&page=accessable&institution=13799&type=2&language=1'
+            return
           }
           window.location = path
         }
@@ -49,6 +51,13 @@
           }).catch(function ( error ) {
             vm.articles = articles
           })
+        }
+
+        function scroll() {
+          console.log('scroll')
+          $location.hash('top')
+          $location.path('/')
+          $anchorScroll()
         }
 
     }

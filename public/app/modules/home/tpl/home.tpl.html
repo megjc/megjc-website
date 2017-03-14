@@ -132,6 +132,7 @@
       <div class="col-md-3 col-sm-3 service">
         <img class="img-responsive" src="public/img/services/library.jpg"/>
         <a href="#!/redirect?url=http://www.questionpoint.org/crs/servlet/org.oclc.admin.BuildForm">Ask a Librarian</a>
+        <i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>
         <p>Request books and other publications from our library</p>
       </div>
       <div class="col-md-3 col-sm-3 service">
@@ -177,6 +178,11 @@
         </a>
         <span><strong>{{event.date}}</strong></span>
       </div>
+
+      <div class="row text-center">
+        <a class="btn btn-lg more-btn-white" href="#!/events" ng-if="vm.events.length > 3">More</a>
+      </div>
+
       </div>
     </div>
   </div>
