@@ -65,9 +65,11 @@
         }
 
         function getSpeeches() {
-          vm.speeches = [
-            {title: 'Remarks for Hon. Dr. Chang for WIHCON Contract Signing', link: 'remarks_for_hon._dr._chang_for_wihcon_contract_signing__december_202016.pdf'}
-          ]
+          pagesService.getSpeeches().then(function (speeches) {
+            vm.speeches = speeches
+          }).catch(function (error) {
+            vm.speeches = []
+          })
         }
 
         function getCareers() {

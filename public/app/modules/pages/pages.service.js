@@ -14,7 +14,8 @@
           getDivisions: getDivisions,
           getTenders: getTenders,
           getLaws: getLaws,
-          getEvents: getEvents
+          getEvents: getEvents,
+          getSpeeches: getSpeeches
         }
 
         return service
@@ -74,6 +75,19 @@
 
         function getEvents() {
           return $http.get('/data/json/events.json')
+                      .then(handleSuccess)
+                      .catch(handlError)
+          function handleSuccess( res ) {
+            return res.data
+          }
+
+          function handlError( error ) {
+            return error
+          }
+        }
+
+        function getSpeeches() {
+          return $http.get('/data/json/speeches.json')
                       .then(handleSuccess)
                       .catch(handlError)
           function handleSuccess( res ) {

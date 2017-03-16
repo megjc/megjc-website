@@ -14,6 +14,8 @@
       <div ng-repeat="speech in vm.speeches">
         <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
         <a ng-href="/docs/speeches/{{speech.link}}">{{speech.title}}</a>
+        <span class="pull-right">Date of Speech - <strong>
+          {{speech.date}}</strong></span>
         <hr />
       </div>
     </div>
