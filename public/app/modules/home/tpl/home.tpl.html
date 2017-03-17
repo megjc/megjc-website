@@ -169,11 +169,8 @@
     <h2><a href="#!/events" style="color:#FFFFFF">Events</a></h2>
     <div class="row">
       <div class="col-md-4 ad" ng-repeat="event in vm.events | limitTo: 3">
-        <a ng-href="/docs/events/{{event.link}}" style="color:#FFFFFF" target="_blank">
-          <img ng-src="public/img/ads/{{event.img}}.jpg" />
-          <p style="margin-bottom:0">{{event.title}}</p>
-        </a>
-        <span><strong>{{event.date}}</strong></span>
+          <img ng-src="{{event._embedded['wp:featuredmedia'][0].source_url}}" />
+          <div ng-bind-html="event.content.rendered | sanitize" class="events-link"></div>
       </div>
 
       <div class="row text-center">

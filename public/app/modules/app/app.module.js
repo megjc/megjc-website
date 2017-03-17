@@ -18,7 +18,24 @@
         ]).config(config)
           .run(ga)
           .constant("WP_API", {
-      				url : '/api/wordpress/?rest_route=/wp/v2/'
+      				url : 'http://megjc.gov.jm/api/?rest_route=/wp/v2/',
+              /**
+               * Wordpress API uses integers to represent a category
+               * @type {Array}
+               */
+              categories: [
+                {id: 2, name: "news", parent: null},
+                {id: 3, name: "latest", parent: {id: 2, name: "news"}},
+                {id: 4, name: "featured", parent: { id: 2, name: 'news'}},
+                {id: 5, name: "careers", parent: null},
+                {id: 6, name: "tenders", parent: null},
+                {id: 7, name: "legislation", parent: {id: 11, name: "information-resources"}},
+                {id: 8, name: "policy", parent: {id: 11, name: "information-resources"}},
+                {id: 9, name: "publication", parent: {id: 11, name: "information-resources"}},
+                {id: 10, name: "report", parent: {id: 11, name: "information-resources"}},
+                {id: 11, name: "information-resources", parent: null},
+                {id: 12, name: "events", parent: null}
+              ]
       		});
     /**
      *

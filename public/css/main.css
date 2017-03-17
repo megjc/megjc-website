@@ -476,6 +476,10 @@ span.gov-name{
   color: #ffffff;
 }
 
+.events-link a{
+  color: #FFFFFF;
+}
+
 .footer {
   /*position: absolute;
   bottom: 0;*/

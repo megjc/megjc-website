@@ -5,10 +5,10 @@
         .module('pages')
         .controller('PagesCtrl', PagesCtrl);
 
-    PagesCtrl.$inject = ['$location', '$window', 'pagesService']
+    PagesCtrl.$inject = ['$location', '$window', 'pagesService', 'wpAPIService', 'WP_API']
 
     /* @ngInject */
-    function PagesCtrl($location, $window, pagesService) {
+    function PagesCtrl($location, $window, pagesService, wpAPIService, WP_API) {
         var vm = this
         vm.goTo = goTo
 
@@ -29,12 +29,17 @@
         function goTo( path ) {
           $window.open( path )
         }
-
+        /**
+         * Get all published events
+         * @return {[type]} [description]
+         */
         function getEvents() {
-          pagesService.getEvents().then(function (events) {
-            vm.events = events
-          }).catch(function (error) {
-            vm.events = []
+          wpAPIService
+            .getPostsByCategory( [WP_API.categories[10].id] )
+            .then(function ( events ) {
+              vm.events = events
+          }).catch(function ( error ) {
+              vm.events = []
           })
         }
 
