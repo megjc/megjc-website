@@ -1,0 +1,12 @@
+/* TEAM */
+Name: Tremaine Buchanan
+Position: Developer
+Organization: Ministry of Economic Growth and Job Creation
+Contact:tremaine.buchanan@megjc.gov.jm
+From: Kingston, Jamaica
+
+Name: Zane Francis
+Position: Database Administrator
+Organization: Ministry of Economic Growth and Job Creation
+Contact: zane.francis@megjc.gov.jm
+From: Kingston, Jamaica

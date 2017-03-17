@@ -1,0 +1,16 @@
+<section class="color-strip-mustard">
+    <div class="container"></div>
+  </section>
+
+<section class="article" style="margin-bottom: 20px">
+  <div class="container">
+    <h3>{{vm.post.title.rendered}} </h3>
+    <span style="font-size:14px">
+      Posted By <strong>{{vm.post._embedded.author[0].name}}</strong> on
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      {{vm.post.date | date:'fullDate'}}
+    </span>
+    <hr />
+    <div ng-bind-html=" vm.post.content.rendered | sanitize"></div>
+  </div>
+</section>

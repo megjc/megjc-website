@@ -1,0 +1,20 @@
+<section class="department-lead">
+    <div class="container">
+      <h1 class="text-center">Policies</h1>
+    </div>
+  </section>
+
+  <section class="color-strip-mustard">
+    <div class="container">
+    </div>
+  </section>
+
+  <section class="content-block-department pages">
+    <div class="container">
+      <div ng-repeat="policy in vm.policies">
+        <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
+        <a ng-href="/docs/policies/{{policy.link}}">{{policy.title}}</a>
+        <hr />
+      </div>
+    </div>
+  </section>

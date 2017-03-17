@@ -1,0 +1,26 @@
+<section class="department-lead">
+    <div class="container">
+      <h1 class="text-center">Careers</h1>
+    </div>
+  </section>
+
+  <section class="color-strip-mustard">
+    <div class="container">
+    </div>
+  </section>
+
+  <section class="content-block-department pages">
+    <div class="container">
+      <h3 ng-if="vm.careers.length == 0">
+        There are currently no vacancies within the Ministry of Economic Growth and Job Creation.</h3>
+      <h4 ng-if="vm.careers.length > 0">There are currently one ( {{vm.careers.length}} )
+        <span ng-if="vm.careers.length > 1">vacancies</span>
+        <span ng-if="vm.careers.length == 1">  vacancy</span> within the Ministry of Economic Growth and Job Creation</h4>
+      <div ng-repeat="career in vm.careers" style="margin-top:20px">
+        <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
+        <a ng-href="/docs/careers/{{career.link}}">{{career.title}}</a>
+        <span class="pull-right">Deadline for submission - <strong>{{career.end_date}}</strong></span>
+        <hr />
+      </div>
+    </div>
+  </section>

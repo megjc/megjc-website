@@ -1,0 +1,24 @@
+<section class="department-lead">
+    <div class="container">
+      <h1 class="text-center">Events</h1>
+    </div>
+  </section>
+
+  <section class="color-strip-blue">
+    <div class="container">
+    </div>
+  </section>
+
+  <section class="content-block-department pages">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 ad" ng-repeat="event in vm.events">
+          <a ng-href="/docs/events/{{event.link}}" target="_blank">
+            <img ng-src="public/img/ads/{{event.img}}.jpg" style="border:5px solid #22B7EB" />
+            <p style="margin-bottom:0">{{event.title}}</p>
+          </a>
+          <span>{{event.date}}</span>
+        </div>
+      </div>
+    </div>
+  </section>

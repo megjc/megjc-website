@@ -1,0 +1,20 @@
+<section class="department-lead">
+    <div class="container">
+      <h1 class="text-center">Publications</h1>
+    </div>
+  </section>
+
+  <section class="color-strip-mustard">
+    <div class="container">
+    </div>
+  </section>
+
+  <section class="content-block-department pages">
+    <div class="container">
+      <div ng-repeat="publication in vm.publications">
+        <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:red"></i>
+        <a ng-href="/docs/publications/{{publication.link}}">{{publication.title}}</a>
+        <hr />
+      </div>
+    </div>
+  </section>
