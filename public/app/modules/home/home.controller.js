@@ -1,27 +1,48 @@
 (function() {
-    'use strict';
+    'use strict'
 
     angular
         .module('home')
         .controller('Home', Home);
 
-    Home.$inject = ['$scope', '$location', '$routeParams', '$anchorScroll', 'HomeService', 'newsService', 'NgMap', 'pagesService'];
+    Home.$inject = ['$scope', '$location', '$routeParams', '$anchorScroll',
+                    'HomeService', 'newsService', 'NgMap', 'pagesService',
+                    'wpAPIService']
 
     /* @ngInject */
-    function Home($scope, $location, $routeParams, $anchorScroll, HomeService, newsService, NgMap, pagesService) {
+    function Home($scope, $location, $routeParams, $anchorScroll,
+                  HomeService, newsService, NgMap, pagesService, wpAPIService) {
         var vm = this;
         vm.goTo = goTo
         vm.cancel = cancel
         vm.scroll = scroll
-        activate()
+        //vm.default_categories = [2,3]
+        /**
+         * Wordpress API uses integers to represent a category
+         * 2 - featured category
+         * 3 - latest-news category
+         * @type {Array}
+         */
+        var _default_categories = [2, 3]
 
+        activate()
+        /**
+         * Handles the controller's startup logic
+         */
         function activate() {
           if($routeParams.url){
             vm.path = $routeParams.url
           }
-          NgMap.getMap().then(function(map) { })
+          NgMap.getMap().then(function( map ) { })
           getEvents()
-          getArticles()
+
+          wpAPIService
+            .getPostsByCategory( _default_categories )
+            .then(function ( posts ) {
+            vm.news = posts
+          }).catch(function ( error ) {
+            vm.news = []
+          })
         }
 
         function goTo( path ){
@@ -42,14 +63,6 @@
             vm.events = events
           }).catch(function (error) {
             vm.events = []
-          })
-        }
-
-        function getArticles() {
-          newsService.getArticles().then(function ( articles ) {
-            vm.latest_news = articles
-          }).catch(function ( error ) {
-            vm.articles = articles
           })
         }
 

@@ -12,8 +12,14 @@
             'home',
             'nav',
             'pages',
-            'news'
-        ]).config(config).run(ga);
+            'news',
+            'shared-services',
+            'shared-filters'
+        ]).config(config)
+          .run(ga)
+          .constant("WP_API", {
+      				url : '/api/wordpress/?rest_route=/wp/v2/'
+      		});
     /**
      *
      * @param  {[type]} $routeProvider [description]

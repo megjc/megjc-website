@@ -31,9 +31,9 @@
       <div class="container">
         <h2>Latest News</h2>
        <div class="row">
-         <div class="col-md-4 col-sm-4 news-item" ng-repeat="news in vm.latest_news">
-           <img ng-src="{{news.img}}">
-           <a ng-href="#!/lastest-news/{{news.slug}}">{{news.title}}</a>
+         <div class="col-md-4 col-sm-4 news-item" ng-repeat="news in vm.news">
+           <img ng-src="{{news._embedded['wp:featuredmedia'][0].source_url}}">
+           <a ng-href="#!/lastest-news/{{news.slug}}">{{news.title.rendered}}</a>
          </div>
        </div>
 

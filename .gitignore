@@ -1,5 +1,6 @@
 public/components
 node_modules
+api
 data
 docs
 public/videos
