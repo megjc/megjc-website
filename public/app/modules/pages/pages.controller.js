@@ -42,11 +42,18 @@
               vm.events = []
           })
         }
-
+        /**
+         * Get all published policies
+         * @return {[type]} [description]
+         */
         function getPolicies() {
-            vm.policies = [
-              {title: 'Draft National Forest Management and Conservation Plan (NFMCP)', link: 'nfmcp_draft_jan_2017.pdf'}
-            ]
+          wpAPIService
+            .getPostsByCategory( [WP_API.categories[6].id] )
+            .then(function ( posts ) {
+              vm.policies = posts
+          }).catch(function ( error ) {
+              vm.policies = []
+          })
         }
 
         function getTenders() {
