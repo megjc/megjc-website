@@ -36,16 +36,19 @@
          * @return {[type]}            [description]
          */
         function getPostsByCategory(categories) {
-          var i = 0, endpoint = 'posts&status=publish' + _default_params
+          var i = 0,
+              endpoint = 'posts&status=publish' + _default_params
+
           for(; i < categories.length; i++){
             endpoint = endpoint + '&categories=' + categories[i]
           }
           var absUrl = WP_API.url + endpoint
-          return $http.get(absUrl).then(function (res) {
-                return res.data
-              }).catch(function (res) {
-                 return res
-              })
+
+          return $http.get(absUrl).then(function(res){
+            return res.data
+          }).catch(function(res){
+            return res
+          })
         }
         /**
          * Get a post by slug

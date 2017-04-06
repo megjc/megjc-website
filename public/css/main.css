@@ -356,6 +356,13 @@ span.gov-name{
   padding: 5px;
   text-decoration: none;
 }
+
+.latest-news-list a:hover{
+  background-color: #0A2E4A;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 .services .btn{
   margin: 10px 0px 0px 0px;
   width: 370px;

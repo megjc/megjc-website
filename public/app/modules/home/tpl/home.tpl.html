@@ -31,14 +31,14 @@
       <div class="container">
         <h2>Latest News</h2>
        <div class="row">
-         <div class="col-md-4 col-sm-4 news-item" ng-repeat="news in vm.news">
-           <img ng-src="{{news._embedded['wp:featuredmedia'][0].source_url}}">
+         <div class="col-md-4 col-sm-4 news-item" ng-repeat="news in vm.news | limitTo: 3">
+           <img ng-src="{{news._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}}">
            <a ng-href="#!/lastest-news/{{news.slug}}">{{news.title.rendered}}</a>
          </div>
        </div>
 
        <div class="row text-center">
-         <a class="btn btn-lg more-btn" href="#!/lastest-news" ng-if="vm.latest_news > 3">More</a>
+         <a class="btn btn-lg more-btn" href="#!/lastest-news" ng-if="vm.news_length > 3">More</a>
        </div>
       </div>
 </section>

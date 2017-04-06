@@ -13,8 +13,8 @@
         <div class="container">
          <div class="row">
            <div class="col-md-4 col-sm-4 list-news-item" ng-repeat="article in vm.articles">
-             <img ng-src={{article.img}}>
-             <a ng-href="#!/lastest-news/{{article.slug}}">{{article.title}}</a>
+             <img ng-src="{{article._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}}">
+             <a ng-href="#!/lastest-news/{{article.slug}}">{{article.title.rendered}}</a>
            </div>
          </div>
         </div>

@@ -1,0 +1,8 @@
+[
+  {"title": "GIS ROI Workshop", "link": "roi_course.pdf", "date": "April 26-28, 2017", "img": "roi_course"},
+  {"title": "Applied GIS And Remote Sensing", "link": "applied_gis_course.pdf", "date": "June 7, 2017", "img": "uwi"},
+  {"title": "Symposium Series - Location Analytics", "link": "symposium.pdf", "date": "March 16, 2017",
+    "img": "symposium_series"},
+  {"title": "Jamaica GIS User Conference - Call for Abstracts", "link": "call_for_abstracts.pdf", "date": "May 15, 2017",
+    "img": "call_for_abstracts"}
+]

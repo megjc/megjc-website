@@ -12,7 +12,7 @@
     /* @ngInject */
     function Home($scope, $location, $routeParams, $anchorScroll,
                   HomeService, newsService, NgMap, pagesService, wpAPIService, WP_API) {
-        var vm = this;
+        var vm = this
         vm.goTo = goTo
         vm.cancel = cancel
         vm.scroll = scroll
@@ -21,7 +21,7 @@
          * Handles the controller's startup logic
          */
         function activate() {
-          if($routeParams.url){
+          if(angular.isDefined($routeParams.url)){
             vm.path = $routeParams.url
           }
           NgMap.getMap().then(function( map ) { })
@@ -36,7 +36,8 @@
           wpAPIService
             .getPostsByCategory( [WP_API.categories[0].id, WP_API.categories[1].id, WP_API.categories[2].id] )
             .then(function ( posts ) {
-            vm.news = posts
+              vm.news_length = posts.length
+              vm.news = posts
           }).catch(function ( error ) {
             vm.news = []
           })
@@ -61,7 +62,10 @@
           $location.search('url', null)
           $location.path('/')
         }
-
+        /**
+         * Get all posts by category
+         * @return {[type]} [description]
+         */
         function getEvents() {
           wpAPIService
             .getPostsByCategory( [WP_API.categories[10].id] )

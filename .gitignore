@@ -1,8 +1,8 @@
 public/components
 node_modules
 api
-data
-docs
+#data
+#docs
 public/videos
 public/img
 focus.html

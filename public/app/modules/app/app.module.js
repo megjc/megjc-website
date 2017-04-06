@@ -34,7 +34,8 @@
                 {id: 9, name: "publication", parent: {id: 11, name: "information-resources"}},
                 {id: 10, name: "report", parent: {id: 11, name: "information-resources"}},
                 {id: 11, name: "information-resources", parent: null},
-                {id: 12, name: "events", parent: null}
+                {id: 12, name: "events", parent: null},
+                {id: 15, name: "speeches", parent : { id : 11, name: "information-resources"}}
               ]
       		});
     /**

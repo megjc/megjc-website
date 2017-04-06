@@ -65,15 +65,22 @@
 
         function getPublications() {
           vm.publications = [
-            {title: 'Forest News-Partner\'s Edition, Dec. 2016', link: 'forest_news-partners_edition_dec._2016.pdf'}
+            {title: 'World Water Day March 22, 2017', link: 'world_water_day_2017_publication.pdf'},
+            {title: 'Forest News-Partner\'s Edition, Dec. 2016', link: 'forest_news-partners_edition_dec._2016.pdf'},
+            {title: 'Public Private Partnership (Housing) Prospectus', link: 'public_private_partnership_prospectus.pdf'}
           ]
         }
-
+        /**
+         * Get all posts by category speech
+         * @return {[type]} [description]
+         */
         function getSpeeches() {
-          pagesService.getSpeeches().then(function (speeches) {
-            vm.speeches = speeches
-          }).catch(function (error) {
-            vm.speeches = []
+          wpAPIService
+            .getPostsByCategory( [WP_API.categories[11].id] )
+            .then(function ( posts ) {
+              vm.speeches = posts
+          }).catch(function ( error ) {
+              vm.speeches = []
           })
         }
 
