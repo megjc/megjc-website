@@ -63,11 +63,18 @@
             vm.tenders = []
           })
         }
-
+        /**
+         * Get all posts by category report
+         * @return {[type]} [description]
+         */
         function getReports() {
-          vm.reports = [
-            {title: 'Rural Water Supply Report on Projects Slated for Completion', link: 'rural-water-supply-report-on-projects-slated-for-completion-2016-2017.pdf'}
-          ]
+          wpAPIService
+            .getPostsByCategory( [WP_API.categories[8].id] )
+            .then(function ( posts ) {
+              vm.reports = posts
+          }).catch(function ( error ) {
+              vm.reports = []
+          })
         }
 
         function getPublications() {
