@@ -16,6 +16,7 @@
         vm.goTo = goTo
         vm.cancel = cancel
         vm.scroll = scroll
+        vm.spinner = true
         activate()
         /**
          * Handles the controller's startup logic
@@ -38,9 +39,11 @@
             .then(function ( posts ) {
               vm.news_length = posts.length
               vm.news = posts
+              vm.spinner = false
           }).catch(function ( error ) {
             vm.news = []
           })
+
         }
         /**
          * Changes the current page's url

@@ -9,7 +9,8 @@
     /* @ngInject */
     function NewsCtrl($routeParams, wpAPIService, WP_API) {
         var vm = this
-
+        vm.spinner = true
+        vm.loadComplete = false
         activate()
         /**
          * Handles controller start up logic
@@ -31,6 +32,7 @@
           .getPostsByCategory([WP_API.categories[0].id])
           .then(function(posts){
             vm.articles = posts
+            vm.spinner = false
           })
         }
         /**
@@ -42,9 +44,12 @@
             .getPostBySlug($routeParams.slug)
             .then(function (post) {
               vm.post = post
+              vm.spinner = false
+              vm.loadComplete = true
             }).catch(function (erorr) {
               vm.post = {}
             })
+
         }
     }
 })();
