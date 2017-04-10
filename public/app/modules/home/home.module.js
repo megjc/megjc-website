@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
+    'use strict'
 
     angular
         .module('home', ['ngMap'])
@@ -20,6 +20,9 @@
             controller: 'Home as vm'
           }).when('/about-us/exec-mgmt',{
             templateUrl: 'public/app/modules/home/tpl/exec-mgmt.tpl.html',
+            controller: 'Home as vm'
+          }).when('/about-us/exec-mgmt/profiles/audrey-sewell',{
+            templateUrl: 'public/app/modules/home/tpl/profiles/as.tpl.html',
             controller: 'Home as vm'
           }).when('/about-us/exec-mgmt/profiles/hon-andrew-holness',{
             templateUrl: 'public/app/modules/home/tpl/profiles/pm.tpl.html',
