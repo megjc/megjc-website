@@ -5,9 +5,9 @@
         .module('news')
         .controller('NewsCtrl', NewsCtrl);
 
-   NewsCtrl.$inject = ['$routeParams','wpAPIService', 'WP_API']
+   NewsCtrl.$inject = ['$routeParams','wp', 'CONSTANTS']
     /* @ngInject */
-    function NewsCtrl($routeParams, wpAPIService, WP_API) {
+    function NewsCtrl($routeParams, wp, CONSTANTS) {
         var vm = this
         vm.spinner = true
         vm.loadComplete = false
@@ -28,11 +28,12 @@
          * @return {[type]} [description]
          */
         function getPosts(){
-          wpAPIService
-          .getPostsByCategory([WP_API.categories[0].id])
+          wp
+          .listPostsByCategory([CONSTANTS.categories[0].id])
           .then(function(posts){
             vm.articles = posts
             vm.spinner = false
+            vm.loadComplete = true
           })
         }
         /**
@@ -40,8 +41,8 @@
          * @return {[type]} [description]
          */
         function getPost(){
-          wpAPIService
-            .getPostBySlug($routeParams.slug)
+          wp
+            .retrievePostBySlug($routeParams.slug)
             .then(function (post) {
               vm.post = post
               vm.spinner = false

@@ -7,11 +7,12 @@
 
     Home.$inject = ['$scope', '$location', '$routeParams', '$anchorScroll',
                     'HomeService', 'newsService', 'NgMap', 'pagesService',
-                    'wpAPIService', 'WP_API']
+                    'wp', 'CONSTANTS']
 
     /* @ngInject */
     function Home($scope, $location, $routeParams, $anchorScroll,
-                  HomeService, newsService, NgMap, pagesService, wpAPIService, WP_API) {
+                  HomeService, newsService, NgMap, pagesService, wp,
+                  CONSTANTS) {
         var vm = this
         vm.goTo = goTo
         vm.cancel = cancel
@@ -27,23 +28,23 @@
           }
           NgMap.getMap().then(function( map ) { })
           getEvents()
-          getPostsByCategory()
+          listPostsByCategory()
         }
         /**
          * Get posts by category id
          * @return {[type]} [description]
          */
-        function getPostsByCategory() {
-          wpAPIService
-            .getPostsByCategory( [WP_API.categories[0].id, WP_API.categories[1].id, WP_API.categories[2].id] )
+        function listPostsByCategory() {
+          wp
+            .listPostsByCategory( [CONSTANTS.categories[0].id,
+                                  CONSTANTS.categories[1].id,
+                                  CONSTANTS.categories[2].id] )
             .then(function ( posts ) {
-              vm.news_length = posts.length
               vm.news = posts
               vm.spinner = false
           }).catch(function ( error ) {
             vm.news = []
           })
-
         }
         /**
          * Changes the current page's url
@@ -70,8 +71,7 @@
          * @return {[type]} [description]
          */
         function getEvents() {
-          wpAPIService
-            .getPostsByCategory( [WP_API.categories[10].id] )
+          wp.listPostsByCategory( [CONSTANTS.categories[10].id] )
             .then(function ( events ) {
               vm.events = events
           }).catch(function ( error ) {

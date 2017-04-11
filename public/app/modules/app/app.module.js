@@ -10,17 +10,29 @@
             'ngRoute',
             'ngResource',
             'home',
-            'nav',
             'pages',
             'news',
             'shared-services',
             'shared-filters'
         ]).config(config)
           .run(ga)
-          .constant("WP_API", {
+          .constant("CONSTANTS", {
+              /**
+               * Base url for Wordpress API
+               * @type {String}
+               */
       				url : 'http://megjc.gov.jm/api/?rest_route=/wp/v2/',
               /**
-               * Wordpress API uses integers to represent a category
+               * Required to retrueve posts with embedded content
+               * @type {String}
+               */
+              params: {
+                embed: '&_embed=1'
+              },
+              /**
+               * Wordpress API uses integers to represent a category.
+               * Therefore we have to explicitly list categories
+               * with respective ids
                * @type {Array}
                */
               categories: [

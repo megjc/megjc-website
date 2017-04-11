@@ -1,19 +1,24 @@
+/**
+ * Wordpress API Service
+ * This library interacts with the Wordpress API
+ * to fetch Wordpress resources for example posts
+ * and categories.
+ * @type {Array}
+ */
 (function() {
     'use strict'
 
     angular
         .module('shared-services',[])
-        .service('wpAPIService', wpAPIService);
+        .service('wp', wp);
 
-    wpAPIService.$inject = ['$http', 'WP_API']
-
+    wp.$inject = ['$http', 'CONSTANTS']
     /* @ngInject */
-    function wpAPIService($http, WP_API) {
-        var _default_params = '&_embed=1',
-            service = {
-              getPostsByCategory:getPostsByCategory,
-              getPostById:getPostById,
-              getPostBySlug:getPostBySlug
+    function wp($http, CONSTANTS) {
+        var service = {
+              listPostsByCategory:listPostsByCategory,
+              retrievePostById:retrievePostById,
+              retrievePostBySlug:retrievePostBySlug
             }
 
         return service
@@ -22,8 +27,8 @@
          * @param  {[type]} id [description]
          * @return {[type]}    [description]
          */
-        function getPostById( id ) {
-          var absUrl = WP_API.url + 'posts/' + id + _default_params
+        function retrievePostById( id ) {
+          var absUrl = CONSTANTS.url + 'posts/' + id + CONSTANTS.params.embed
           return $http.get(absUrl).then(function (res) {
             return res.data
           }).catch(function (res) {
@@ -35,14 +40,14 @@
          * @param  {[type]} categories Array of categories
          * @return {[type]}            [description]
          */
-        function getPostsByCategory(categories) {
+        function listPostsByCategory(categories) {
           var i = 0,
-              endpoint = 'posts&status=publish' + _default_params
+              endpoint = 'posts&status=publish' + CONSTANTS.params.embed
 
           for(; i < categories.length; i++){
             endpoint = endpoint + '&categories=' + categories[i]
           }
-          var absUrl = WP_API.url + endpoint
+          var absUrl = CONSTANTS.url + endpoint
 
           return $http.get(absUrl).then(function(res){
             return res.data
@@ -55,8 +60,8 @@
          * @param  {[type]} slug [description]
          * @return {[type]}      [description]
          */
-        function getPostBySlug( slug ) {
-          var absUrl = WP_API.url + 'posts&slug=' + slug + _default_params
+        function retrievePostBySlug( slug ) {
+          var absUrl = CONSTANTS.url + 'posts&slug=' + slug + CONSTANTS.params.embed
           return $http.get(absUrl).then(function (res) {
                 return res.data[0]
               }).catch(function (res) {

@@ -9,13 +9,19 @@
     </div>
   </section>
 
-  <section class="content-block latest-news-list">
-        <div class="container">
-         <div class="row">
-           <div class="col-md-4 col-sm-4 list-news-item" ng-repeat="article in vm.articles">
-             <img ng-src="{{article._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}}">
-             <a ng-href="#!/lastest-news/{{article.slug}}">{{article.title.rendered}}</a>
-           </div>
-         </div>
-        </div>
+  <div style="margin:200px auto;height:20px; width:20px" ng-show="vm.spinner">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span></h2>
+  </div>
+
+
+  <section class="content-block latest-news-list" ng-show="vm.loadComplete">
+    <div class="container">
+     <div class="row">
+       <div class="col-md-4 col-sm-4 list-news-item" ng-repeat="article in vm.articles">
+         <img ng-src="{{article._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}}">
+         <a ng-href="#!/lastest-news/{{article.slug}}">{{article.title.rendered}}</a>
+       </div>
+     </div>
+    </div>
   </section>

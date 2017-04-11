@@ -2,11 +2,7 @@
     <div class="container"></div>
   </section>
 
-<div style="margin:200px auto;height:20px; width:20px" ng-show="vm.spinner">
-  <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-    <span class="sr-only">Loading...</span></h2>
-</div>
-
+<div ng-include="'public/app/partials/spinner.html'"></div>
 
 <section class="article" style="margin-bottom: 20px" ng-show="vm.loadComplete">
   <div class="container">

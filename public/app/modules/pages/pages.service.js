@@ -15,10 +15,25 @@
           getTenders: getTenders,
           getLaws: getLaws,
           getEvents: getEvents,
-          getSpeeches: getSpeeches
+          getSpeeches: getSpeeches,
+          getPageName: getPageName
         }
 
         return service
+        /**
+         * Get the name of the page from url
+         * @param  {[type]} path [description]
+         * @return {[type]}      [description]
+         */
+        function getPageName( path ){
+          var temp = path.split('/'),
+              page_name = ''
+
+          if(temp.length == 2) page_name = temp[1]
+          if(temp.length == 3) page_name = temp[2]
+
+          return page_name
+        }
 
         function getCareers() {
           return $http.get('/data/json/careers.json')
