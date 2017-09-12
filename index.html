@@ -35,9 +35,6 @@
     and sustainable development in Jamaica.">
     <meta name="twitter:creator" content="@mwlecc">
     <meta name="twitter:image:src" content="http://www.megjc.gov.jm/img/logo/logo.jpg">
-
-
-
     <link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/components/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -46,8 +43,6 @@
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="icon" type="image/png" href="public/img/coa/coa.png" />
     <title>Ministry of Economic Growth and Job Creation</title>
-    <script src="public/components/jquery/dist/jquery.min.js"></script>
-    <script src="public/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -60,6 +55,17 @@
     </script>
   </head>
   <body class="page-wrap">
+
+  <section class="color-strip-blue-lg">
+    <div class="container-fluid text-center">
+      <h4>
+        <a href="/#!/lastest-news/regional-housing-conference-2017">
+          Regional Housing Conference 2017 - IBEROSTAR Rose Hall Suites, October 18 - 20, 2017
+        </a>
+      </h4>
+    </div>
+  </section>
+
   <section class="color-strip-gray-sm">
     <div class="container social-strip">
       <ul>
@@ -74,18 +80,18 @@
               Email: info@megjc.gov.jm
           </a>
           </li>
-        <li>
+        <li id="social-strip-icons">
           <a href="https://www.facebook.com/megjc.gov/" target="_blank">
             <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
+        <li id="social-strip-icons">
           <a href="https://twitter.com/mwlecc" target="_blank">
             <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i>
           </a>
         </li>
 
-        <li>
+        <li id="social-strip-icons">
           <a href="https://www.youtube.com/channel/UCIMxnxj46T6sqgcL2PeLwwQ" target="_blank">
           <i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i>
           </a>
@@ -93,70 +99,84 @@
       </ul>
     </div>
   </section>
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-         <a href="#!/"
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false">Home <span class="caret"></span></a>
-         <ul class="dropdown-menu">
-           <li><a href="http://cloud.infoexchangeja.com/mail" target="_blank">Webmail</a></li>
-         </ul>
-       </li>
-        <li class="dropdown">
-         <a href
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false">About Us <span class="caret"></span></a>
-         <ul class="dropdown-menu">
-           <li><a href="#!/about-us">Ministry Overview</a></li>
-           <li><a href="#!/about-us/exec-mgmt">Executive Management</a></li>
-           <li><a href="#!/divisions">Divisions and Branches</a></li>
-         </ul>
-       </li>
-       <li class="dropdown">
-        <a href
-           class="dropdown-toggle"
-           data-toggle="dropdown"
-           role="button"
-           aria-haspopup="true"
-           aria-expanded="false">Information Resources <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#!/resources/legislations-and-regulations">Legislation & Regulations</a></li>
-          <li><a href="#!/resources/policies">Policies</a></li>
-          <li><a href="#!/resources/publications">Publications</a></li>
-          <li><a href="#!/resources/reports">Reports</a></li>
-          <li><a href="#!/resources/speeches-transcripts">Speech Transcripts</a></li>
-        </ul>
-      </li>
-        <li><a href="#!/tenders">Tenders</a></li>
-        <li><a href="#!/careers">Careers</a></li>
-        <!-- <li><a href id="search-link"><i class="fa fa-search"></i> Search</a></li> -->
-        <li><a href><span class="gov-name">Government of Jamaica</span> <img src="public/img/jamflag.png"></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+  <nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-menu">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- <a class="navbar-brand" href="#">Brand</a> -->
+				</div>
+				<div class="collapse navbar-collapse" id="custom-menu">
+					<ul class="nav navbar-nav">
+            <li class="dropdown">
+             <a href="#!/"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false">Home <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a data-toggle="collapse" data-target="#custom-menu" href="http://cloud.infoexchangeja.com/mail" target="_blank">Webmail</a></li>
+             </ul>
+           </li>
+           <li class="dropdown">
+            <a href
+               class="dropdown-toggle"
+               data-toggle="dropdown"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">About Us <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/about-us">Ministry Overview</a></li>
+              <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/about-us/exec-mgmt">Executive Management</a></li>
+              <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/divisions">Divisions and Branches</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+           <a href
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false">Information Resources <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/resources/legislations-and-regulations">Legislation & Regulations</a></li>
+             <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/resources/policies">Policies</a></li>
+             <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/resources/publications">Publications</a></li>
+             <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/resources/reports">Reports</a></li>
+             <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/resources/speeches-transcripts">Speech Transcripts</a></li>
+           </ul>
+         </li>
+            <li class="dropdown">
+             <a href
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false">Conferences<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+              <li><a data-toggle="collapse" data-target="#custom-menu" href="/#!/lastest-news/gis-user-conference-2017" target="_blank">LICJ User Conference</a></li>
+              <li><a data-toggle="collapse" data-target="#custom-menu" href="/#!/lastest-news/regional-housing-conference-2017" target="_blank">Regional Housing Conference 2017</a></li>
+             </ul>
+           </li>
+            <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/tenders">Tenders</a></li>
+            <li><a data-toggle="collapse" data-target="#custom-menu" href="#!/careers">Careers</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 <div class="ng-view" autoscroll="true"></div>
 <script src="public/components/angular/angular.min.js"></script>
 <script src="public/components/angular-route/angular-route.min.js"></script>
 <script src="public/components/angular-resource/angular-resource.min.js"></script>
 <script src="public/js/ng-map.min.js"></script>
+<script src="public/components/jquery/dist/jquery.min.js"></script>
+<script src="public/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- inject:js -->
 <script src="/public/dist/src.min.js"></script>
 <!-- endinject -->

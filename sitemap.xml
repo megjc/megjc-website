@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/</loc>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/about-us</loc>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <changefreq>yearly</changefreq>
+
+      <priority>1.0</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/about-us/exec-mgmt</loc>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <changefreq>yearly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/divisions</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/events</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/tenders</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/careers</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/lastest-news</loc>
+
+      <changefreq>weekly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/resources/legislations-and-regulations</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/resources/policies</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/resources/publications</loc>
+
+      <changefreq>yearly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/resources/speeches-transcripts</loc>
+
+      <changefreq>monthly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+   
+   <url>
+
+      <loc>http://www.megjc.gov.jm/#!/resources/reports</loc>
+
+      <changefreq>monthly</changefreq>
+
+      <lastmod>2017-04-18</lastmod>
+
+      <priority>0.5</priority>
+
+   </url>
+
+</urlset>

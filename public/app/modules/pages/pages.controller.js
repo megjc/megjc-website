@@ -106,7 +106,8 @@
           vm.publications = [
             {title: 'World Water Day March 22, 2017', link: 'world_water_day_2017_publication.pdf'},
             {title: 'Forest News-Partner\'s Edition, Dec. 2016', link: 'forest_news-partners_edition_dec._2016.pdf'},
-            {title: 'Public Private Partnership (Housing) Prospectus', link: 'public_private_partnership_prospectus.pdf'}
+            {title: 'Public Private Partnership (Housing) Prospectus', link: 'public_private_partnership_prospectus.pdf'},
+            {title: 'Economic Growth Council Third Report to the Nation', link: 'egc_third_report_to_the_nation.pdf'}
           ]
         }
         /**

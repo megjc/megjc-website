@@ -47,7 +47,7 @@
           for(; i < categories.length; i++){
             endpoint = endpoint + '&categories=' + categories[i]
           }
-          var absUrl = CONSTANTS.url + endpoint
+          var absUrl = CONSTANTS.url + endpoint + '&per_page=100'
 
           return $http.get(absUrl).then(function(res){
             return res.data
