@@ -1,8 +1,8 @@
-#public/components
+public/components
 node_modules
-api
-#data
-#docs
+api/wp-config.php
+data
+docs
 public/videos
 public/img
 focus.html

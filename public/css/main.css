@@ -660,6 +660,11 @@ and (max-width: 1024px){
 and (min-width : 320px)
 and (max-width : 480px) {
 
+  .color-strip-blue-lg{
+    height: auto;
+    padding-bottom: 15px;
+  }
+
   #social-strip-icons{
     display: inline;
   }
