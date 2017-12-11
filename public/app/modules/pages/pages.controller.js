@@ -123,11 +123,25 @@
               vm.speeches = []
           })
         }
-
+        /**
+         * Get a list of current job listings
+         * @return {[type]} [description]
+         */
         function getCareers() {
           pagesService.getCareers().then(function (careers) {
-              vm.careers = careers
+              var len = careers.length,
+                  date = new Date(),
+                  milliseconds = date.getTime(),
+                  current_listings = [],
+                  i = 0
+              if(len > 0){
+                for(; i < len; i++){
+                  if(milliseconds < careers[i].end_date)
+                    current_listings.push(careers[i])
+                }
+              }
               _stopSpinner()
+              vm.careers = current_listings
           }).catch(function (error) {
              vm.careers = []
           })
